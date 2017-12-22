@@ -1,0 +1,96 @@
+﻿@model Inventario.DAL.RemisionDetalleModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.0.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validation.unobtrusive/3.2.6/jquery.validate.unobtrusive.min.js"></script>
+
+<div class="wrapper" id="servicios">
+    <div class="page-header clear-filter" filter-color="blue" style="position:relative; height: 150px;">
+        <div class="page-header-image" data-parallax="true" style="background-image: url('/images/design-palettes.jpg'); ">
+        </div>
+        <div class="container">
+            <div class="brand" style="">
+                <br /><br /><br /><br /><br /><br /><br />
+                <h2></h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="section section-nucleo-icons">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12">
+                        <h2 class="title">Editar remisión</h2>
+                        <h5 class="description">
+                            <p>
+                            </p>
+
+                        </h5>
+
+                        <div class="section section-basic">
+                            <div class="container">
+                                <div id="sectionwaterflooding" class="col-md-4 col-lg-4">
+                                    <form asp-action="Edit">
+                                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                        <div class="form-group">
+                                            <label asp-for="Codigo" class="control-label"></label>
+                                            <input asp-for="Codigo" class="form-control" type="number"
+                                                    data-val="true" data-val-required="Campo Código Obligatorio."
+                                                    id="Codigo" name="Codigo"/>
+                                            <span class="text-danger field-validation-valid"
+                                                  data-valmsg-for="Codigo" data-valmsg-replace="true"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label asp-for="FechaDocumento" class="control-label"></label>
+                                            <input asp-for="FechaDocumento" class="form-control" />
+                                            <span asp-validation-for="FechaDocumento" class="text-danger"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label asp-for="nombreAlmacen" class="control-label"></label>
+                                            <select asp-for="IdAlmacen" class="form-control" asp-items='new SelectList(ViewBag.Almacenes, "Id", "Nombre")'></select>
+                                            <span asp-validation-for="nombreAlmacen" class="text-danger"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label asp-for="nombreProveedor" class="control-label"></label>
+                                            <select asp-for="IdProveedor" class="form-control" asp-items='new SelectList(ViewBag.Proveedores, "Id", "Nombre")'></select>
+                                            <span asp-validation-for="nombreProveedor" class="text-danger"></span>
+                                        </div>
+
+                                        <table class="table table-bordered table-responsive table-hover">
+                                            <tr>
+                                                <th>Producto</th>
+                                                <th>Cantidad</th>
+                                            </tr>
+                                            @for (int i=0; i<Model.Cantidades.Count; i++)
+                                            {
+                                                <tr>
+                                                    <td><label asp-for="nombreProductos" class="control-label">@Model.nombreProductos[i]</label></td>
+                                                    <td><input asp-for="@Model.Cantidades[i]" class="form-control" /></td>
+                                                </tr>
+                                            }
+
+                                        </table> 
+
+                                        <div class="form-group">
+                                            <input type="submit" value="Editar" class="btn btn-blue btn-round" /> |
+                                            <a asp-action="Index">Volver a la lista de remisiones</a>
+                                        </div>
+                                    </form>
+                                    <div>
+                                        
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

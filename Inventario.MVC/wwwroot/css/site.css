@@ -1,0 +1,84 @@
+﻿body {
+    background-image: url('http://www.expogr.com/tanzania/oilgas/images/headerbg.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;    
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"] {
+    width: 100%;
+}
+
+/* QR code generator */
+#qrCode {
+    margin: 15px;
+}
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+}
+
+.navbar-fixed-top {
+    background-color: aqua;
+    height:130px;
+    border-color: transparent;
+    opacity: 1;
+}
+
+.content-main {
+    height:450px;
+    background-color:transparent;
+}
+
+.content-main-text {
+    top: 150px;
+    color: white;
+    text-align: center;
+    position: relative;    
+    text-align:left;
+}
+
+.content-about {
+    background-color: blueviolet;
+    height: 450px;
+}
+
+.content-contact {
+    height: 550px;
+    background-color: aqua;
+}
+
+.content-contact-1 {
+    border-style:solid;
+    height:500px;
+    letter-spacing:2px;
+}
+
+.content-logomin {
+    height:80px;
+    background-color:brown;
+}
+
+.collapse {
+    position:relative;
+    top:40px;
+    font-size:30px;
+    align-content:center
+}
